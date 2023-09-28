@@ -23,7 +23,7 @@ function letsAddPerson() {
       
          <Button title="Läsa mera" 
          onPress={()=>{
-            navigation.navigate("Läsmer",{fruit:"Papaya"});
+            navigation.navigate("Läsmer",{person:{key: 'Xerxes',lastname:"Abcsson"}});
          }}/>
         <TouchableOpacity onPress={()=>
         onAddname("ABC")}>
