@@ -7,10 +7,18 @@ const[readnumber,setReadnumber]=useState (0);
 
   return (
     <View>
-        <Text>Read more{route.params.fruit}</Text>
+        <Text>Read more{route.params.person.lastname}</Text>
+
+        <Text>{readnumber}</Text>
+
         <Button title="Plus" onPress={()=>{
         setReadnumber (readnumber+1);
     }}/>
+
+        <Button title="Gå till tredje vyn" onPress ={()=>{
+            navigation.navigate("Tredje")
+
+        }}/>
     </View>
   );
 }
