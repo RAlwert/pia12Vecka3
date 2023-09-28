@@ -1,21 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
+import Fancybox from './Fancybox';
+import { useState } from 'react';
+import Readmore from './Readmore';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Welcome from './Welcome';
+
 
 export default function App() {
+
+  const Stack = createNativeStackNavigator();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!Titta det appelsin</Text>
-      <Text>MEra text här kommer en liten förändring</Text>
-      <StatusBar style="auto" />
-    </View>
+    
+  <NavigationContainer>
+    <Stack.Navigator>
+
+      <Stack.Screen name="Starten"component={Welcome}/>
+
+      <Stack.Screen name="Läsmer" component={Readmore}/>
+
+    </Stack.Navigator>
+  </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ff0000',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
